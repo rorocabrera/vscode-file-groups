@@ -1,0 +1,55 @@
+{
+  "name": "vscode-file-groups",
+  "displayName": "File Groups Manager",
+  "description": "Manage and switch between groups of files in your workspace",
+  "version": "0.1.0",
+  "publisher": "your-publisher-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vscode-file-groups"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:fileGroups.saveCurrentAsGroup",
+    "onCommand:fileGroups.selectAndOpenGroup"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fileGroups.saveCurrentAsGroup",
+        "title": "File Groups: Save Current Files as Group"
+      },
+      {
+        "command": "fileGroups.selectAndOpenGroup",
+        "title": "File Groups: Open Group"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "fileGroups.saveCurrentAsGroup",
+        "key": "ctrl+k ctrl+s",
+        "mac": "cmd+k cmd+s"
+      },
+      {
+        "command": "fileGroups.selectAndOpenGroup",
+        "key": "ctrl+k ctrl+o",
+        "mac": "cmd+k cmd+o"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/node": "^16.18.0",
+    "typescript": "^4.9.0"
+  }
+}
